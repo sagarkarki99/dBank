@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
+require('hardhat-gas-reporter');
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
@@ -23,5 +24,11 @@ module.exports = {
   },
   etherscan: {
     apiKey: 'ZAXFSZWTJQET98UBWVTBNEQ7118Y58JB8H',
+  },
+  gasReporter: {
+    currency: 'USD',
+    coinmarketcap: '9eb55b19-27a8-4439-8aa6-74171ebf5463',
+    token: "BNB",
+    enabled: true,
   }
 };
